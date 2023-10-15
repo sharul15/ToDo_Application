@@ -1,0 +1,241 @@
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar bg-dark navbar-dark fixed-top" data-bs-theme="dark">
+    <div class="container">
+      <h4 class="navbar-text">
+        ToDo Application
+        <small class="text-body-secondary"> - for Sharul Dhawane</small>
+      </h4>
+    </div>
+  </nav>
+</header>
+
+<!-- Begin page content -->
+<main class="flex-shrink-0 mb-5">
+  <div class="container">
+    <div class="row mt-5">
+      <h1 class="display-6">Create a new Task</h1>
+      <form class="row g-3 align-items-center">
+        <div class="col">
+          <div class="form-floating">
+            <input
+              type="text"
+              class="form-control"
+              id="form_title"
+              placeholder="Title"
+            />
+            <label for="form_title">Title</label>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="form-floating">
+            <textarea
+              type="text"
+              class="form-control"
+              id="form_description"
+              placeholder="Description"
+            ></textarea>
+            <label for="form_description">Description</label>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="form-floating">
+            <input
+              type="text"
+              class="form-control"
+              id="form_due_date"
+              placeholder="Due Date"
+            />
+            <label for="form_due_date">Due Date</label>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="form-check form-switch">
+            <input
+              type="checkbox"
+              role="switch"
+              class="form-check-input"
+              id="form_is_completed"
+            />
+            <label class="form-check-label" for="form_is_completed"
+              >Is Completed</label
+            >
+          </div>
+        </div>
+
+        <div class="col-1">
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </form>
+    </div>
+    <div class="row mt-5">
+      <div class="d-flex align-items-start">
+        <div
+          class="nav flex-column nav-pills me-3"
+          id="v-pills-tab"
+          role="tablist"
+        >
+          <button
+            class="nav-link active"
+            id="v-pills-pending-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-pending"
+            type="button"
+            role="tab"
+          >
+            Pending
+          </button>
+          <button
+            class="nav-link position-relative"
+            id="v-pills-overdue-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-overdue"
+            type="button"
+            role="tab"
+          >
+            Overdue
+            <span
+              class="position-absolute top-50 start-0 translate-middle p-2 bg-danger border border-light rounded-circle"
+            >
+              <span class="visually-hidden">New alerts</span>
+            </span>
+          </button>
+          <button
+            class="nav-link"
+            id="v-pills-finished-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-finished"
+            type="button"
+            role="tab"
+          >
+            Finished
+          </button>
+          <button
+            class="nav-link"
+            id="v-pills-all-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-all"
+            type="button"
+            role="tab"
+          >
+            All
+          </button>
+        </div>
+        <div class="tab-content col" id="v-pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="v-pills-pending"
+            role="tabpanel"
+            aria-labelledby="v-pills-pending-tab"
+            tabindex="0"
+          >
+            <div class="list-group">
+              <div class="list-group-item list-group-item-action">
+                <div class="row">
+                  <div class="col-auto">
+                    <input class="form-check-input" type="checkbox" />
+                  </div>
+                  <div class="col" style="cursor: pointer">
+                    <div class="d-flex justify-content-between mb-2">
+                      <h5 class="text-break">This is the first heading</h5>
+                      <small class="col-auto">3 days ago</small>
+                    </div>
+                    <p class="mb-1 text-break">
+                      This is the description of the task. But this could be
+                      very long. This is the description of the task. But this
+                      could be very long. This is the description of the task.
+                      But this could be very long. This is the description of
+                      the task. But this could be very long. This is the
+                      description of the task. But this could be very long.
+                    </p>
+                    <small class="fw-lighter">This is due on Thursday.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="v-pills-overdue"
+            role="tabpanel"
+            aria-labelledby="v-pills-overdue-tab"
+            tabindex="0"
+          >
+            <div class="task-list">
+              <div class="task">
+                <input type="checkbox" />
+                <span class="task-title">Task 1</span>
+                <span class="task-description"
+                  >This is the description for Task 1.</span
+                >
+                <button
+                  type="button"
+                  class="btn btn-link"
+                  data-bs-target="#collapse-1"
+                  data-bs-toggle="collapse"
+                >
+                  Expand
+                </button>
+              </div>
+              <div class="task">
+                <input type="checkbox" />
+                <span class="task-title">Task 2</span>
+                <span class="task-description"
+                  >This is a very long description for Task 2.</span
+                >
+                <button
+                  type="button"
+                  class="btn btn-link"
+                  data-bs-target="#collapse-2"
+                  data-bs-toggle="collapse"
+                >
+                  Expand
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="v-pills-finished"
+            role="tabpanel"
+            aria-labelledby="v-pills-finished-tab"
+            tabindex="0"
+          >
+            This is some placeholder content the Messages tab's associated
+            content. Clicking another tab will toggle the visibility of this one
+            for the next. The tab JavaScript swaps classes to control the
+            content visibility and styling. You can use it with tabs, pills, and
+            any other .nav-powered navigation.
+          </div>
+          <div
+            class="tab-pane fade"
+            id="v-pills-all"
+            role="tabpanel"
+            aria-labelledby="v-pills-all-tab"
+            tabindex="0"
+          >
+            This is some placeholder content the Settings tab's associated
+            content. Clicking another tab will toggle the visibility of this one
+            for the next. The tab JavaScript swaps classes to control the
+            content visibility and styling. You can use it with tabs, pills, and
+            any other .nav-powered navigation.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<router-outlet></router-outlet>
+
+<footer class="footer mt-auto py-3 bg-body-tertiary">
+  <div class="container">
+    <span class="text-body-secondary"
+      >Verificient Technologies' ToDo Application | Sharul Dhawane |
+      <a href="mailto:sharuldhawane@gmail.com">sharuldhawane@gmail.com</a></span
+    >
+  </div>
+</footer>

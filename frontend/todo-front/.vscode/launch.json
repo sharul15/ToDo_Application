@@ -5,15 +5,6 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Python: Django",
-      "type": "python",
-      "request": "launch",
-      "program": "${workspaceFolder}/backend/todo_back/manage.py",
-      "args": ["runserver_plus"],
-      "django": true,
-      "justMyCode": true
-    },
-    {
       "name": "Angular: ng serve",
       "type": "chrome",
       "request": "launch",
