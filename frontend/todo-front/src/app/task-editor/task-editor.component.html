@@ -1,1 +1,56 @@
-<p>task-editor works!</p>
+<h1 class="display-6">Create a new Task</h1>
+<form class="row g-3 align-items-center">
+  <div class="col">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="form_title"
+        placeholder="Title"
+      />
+      <label for="form_title">Title</label>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="form-floating">
+      <textarea
+        type="text"
+        class="form-control"
+        id="form_description"
+        placeholder="Description"
+      ></textarea>
+      <label for="form_description">Description</label>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="form_due_date"
+        placeholder="Due Date"
+      />
+      <label for="form_due_date">Due Date</label>
+    </div>
+  </div>
+
+  <div class="col-2">
+    <div class="form-check form-switch">
+      <input
+        type="checkbox"
+        role="switch"
+        class="form-check-input"
+        id="form_is_completed"
+      />
+      <label class="form-check-label" for="form_is_completed">
+        Is Completed
+      </label>
+    </div>
+  </div>
+
+  <div class="col-1">
+    <button type="submit" class="btn btn-primary">Create</button>
+  </div>
+</form>

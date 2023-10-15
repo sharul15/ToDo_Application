@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-task-editor',
   templateUrl: './task-editor.component.html',
-  styleUrls: ['./task-editor.component.css']
+  styleUrls: ['./task-editor.component.css'],
 })
-export class TaskEditorComponent {
-
-}
+export class TaskEditorComponent {}

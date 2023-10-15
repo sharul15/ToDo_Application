@@ -1,76 +1,20 @@
 <header>
-  <!-- Fixed navbar -->
   <nav class="navbar bg-dark navbar-dark fixed-top" data-bs-theme="dark">
     <div class="container">
       <h4 class="navbar-text">
-        ToDo Application
+        To-Do Application
         <small class="text-body-secondary"> - for Sharul Dhawane</small>
       </h4>
     </div>
   </nav>
 </header>
 
-<!-- Begin page content -->
 <main class="flex-shrink-0 mb-5">
   <div class="container">
-    <div class="row mt-5">
-      <h1 class="display-6">Create a new Task</h1>
-      <form class="row g-3 align-items-center">
-        <div class="col">
-          <div class="form-floating">
-            <input
-              type="text"
-              class="form-control"
-              id="form_title"
-              placeholder="Title"
-            />
-            <label for="form_title">Title</label>
-          </div>
-        </div>
+    <app-task-editor class="row mt-5"></app-task-editor>
 
-        <div class="col">
-          <div class="form-floating">
-            <textarea
-              type="text"
-              class="form-control"
-              id="form_description"
-              placeholder="Description"
-            ></textarea>
-            <label for="form_description">Description</label>
-          </div>
-        </div>
+    <!-- Break -->
 
-        <div class="col">
-          <div class="form-floating">
-            <input
-              type="text"
-              class="form-control"
-              id="form_due_date"
-              placeholder="Due Date"
-            />
-            <label for="form_due_date">Due Date</label>
-          </div>
-        </div>
-
-        <div class="col-2">
-          <div class="form-check form-switch">
-            <input
-              type="checkbox"
-              role="switch"
-              class="form-check-input"
-              id="form_is_completed"
-            />
-            <label class="form-check-label" for="form_is_completed"
-              >Is Completed</label
-            >
-          </div>
-        </div>
-
-        <div class="col-1">
-          <button type="submit" class="btn btn-primary">Create</button>
-        </div>
-      </form>
-    </div>
     <div class="row mt-5">
       <div class="d-flex align-items-start">
         <div
@@ -233,9 +177,9 @@
 
 <footer class="footer mt-auto py-3 bg-body-tertiary">
   <div class="container">
-    <span class="text-body-secondary"
-      >Verificient Technologies' ToDo Application | Sharul Dhawane |
-      <a href="mailto:sharuldhawane@gmail.com">sharuldhawane@gmail.com</a></span
-    >
+    <span class="text-body-secondary">
+      Verificient Technologies' ToDo Application | Sharul Dhawane |
+      <a href="mailto:sharuldhawane@gmail.com">sharuldhawane@gmail.com</a>
+    </span>
   </div>
 </footer>
