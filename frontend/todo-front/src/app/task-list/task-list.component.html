@@ -1,1 +1,24 @@
-<p>task-list works!</p>
+<div class="list-group">
+  <div
+    class="list-group-item list-group-item-action"
+    *ngFor="let task of tasks"
+  >
+    <div class="row">
+      <div class="col-auto">
+        <input class="form-check-input" type="checkbox" />
+      </div>
+      <div class="col" style="cursor: pointer">
+        <div class="d-flex justify-content-between mb-2">
+          <h5 class="text-break">{{ task.title }}</h5>
+          <small class="col-auto">{{ task.created_at | date }}</small>
+        </div>
+        <p class="mb-1 text-break" *ngIf="task.description">
+          {{ task.description }}
+        </p>
+        <small class="fw-lighter" *ngIf="task.due_date">
+          This is due on {{ task.due_date | date }}.
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
