@@ -7,10 +7,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TaskEditorComponent } from './task-editor/task-editor.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, TaskEditorComponent, TaskListComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

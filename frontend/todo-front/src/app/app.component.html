@@ -16,27 +16,13 @@
       <div class="d-flex align-items-start">
         <div
           ngbNav
-          #nav="ngbNav"
-          [(activeId)]="active"
           class="nav-pills flex-column"
           orientation="vertical"
+          [activeId]="route.fragment | async"
         >
-          <ng-container ngbNavItem="pending">
-            <a ngbNavLink routerLink="/">Pending</a>
-          </ng-container>
-          <ng-container ngbNavItem="overdue">
-            <a ngbNavLink routerLink="/" [queryParams]="{ filter: 'overdue' }">
-              Overdue
-            </a>
-          </ng-container>
-          <ng-container ngbNavItem="finished">
-            <a ngbNavLink routerLink="/" [queryParams]="{ filter: 'finished' }">
-              Finished
-            </a>
-          </ng-container>
-          <ng-container ngbNavItem="all">
-            <a ngbNavLink routerLink="/" [queryParams]="{ filter: 'all' }">
-              All
+          <ng-container [ngbNavItem]="link.fragment" *ngFor="let link of links">
+            <a ngbNavLink routerLink="/" [fragment]="link.fragment">
+              {{ link.title }}
             </a>
           </ng-container>
         </div>

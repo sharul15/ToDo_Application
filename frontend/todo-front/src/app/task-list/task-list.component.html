@@ -2,10 +2,16 @@
   <div
     class="list-group-item list-group-item-action"
     *ngFor="let task of tasks"
+    [class.text-decoration-line-through]="task.is_completed"
   >
     <div class="row">
       <div class="col-auto">
-        <input class="form-check-input" type="checkbox" />
+        <input
+          class="form-check-input"
+          type="checkbox"
+          [checked]="task.is_completed"
+          (change)="toggleTaskCompleted(task)"
+        />
       </div>
       <div class="col" style="cursor: pointer">
         <div class="d-flex justify-content-between mb-2">

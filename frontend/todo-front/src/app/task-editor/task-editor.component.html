@@ -1,14 +1,24 @@
-<h1 class="display-6">Create a new Task</h1>
-<form class="row g-3 align-items-center">
+<h1 class="display-6" *ngIf="taskForm.id === null">Create a new Task</h1>
+<h1 class="display-6" *ngIf="taskForm.id !== null">
+  Update the Task {{ taskForm.id }}
+</h1>
+<form (ngSubmit)="onSubmit()" class="row g-3 align-items-start">
+  <input type="hidden" name="id" id="form_id" [(ngModel)]="taskForm.id" />
   <div class="col">
     <div class="form-floating">
       <input
         type="text"
+        name="title"
         class="form-control"
         id="form_title"
         placeholder="Title"
+        [(ngModel)]="taskForm.title"
+        [class.is-invalid]="validationErrors['title']"
       />
       <label for="form_title">Title</label>
+      <div *ngIf="validationErrors['title']" class="invalid-feedback">
+        {{ validationErrors["title"][0] }}
+      </div>
     </div>
   </div>
 
@@ -16,23 +26,35 @@
     <div class="form-floating">
       <textarea
         type="text"
+        name="description"
         class="form-control"
         id="form_description"
         placeholder="Description"
+        [(ngModel)]="taskForm.description"
+        [class.is-invalid]="validationErrors['description']"
       ></textarea>
       <label for="form_description">Description</label>
+      <div *ngIf="validationErrors['description']" class="invalid-feedback">
+        {{ validationErrors["description"][0] }}
+      </div>
     </div>
   </div>
 
   <div class="col">
     <div class="form-floating">
       <input
-        type="text"
+        type="date"
+        name="due_date"
         class="form-control"
         id="form_due_date"
         placeholder="Due Date"
+        [(ngModel)]="taskForm.due_date"
+        [class.is-invalid]="validationErrors['due_date']"
       />
       <label for="form_due_date">Due Date</label>
+      <div *ngIf="validationErrors['due_date']" class="invalid-feedback">
+        {{ validationErrors["due_date"][0] }}
+      </div>
     </div>
   </div>
 
@@ -40,17 +62,31 @@
     <div class="form-check form-switch">
       <input
         type="checkbox"
+        name="is_completed"
         role="switch"
         class="form-check-input"
         id="form_is_completed"
+        [(ngModel)]="taskForm.is_completed"
+        [class.is-invalid]="validationErrors['is_completed']"
       />
       <label class="form-check-label" for="form_is_completed">
         Is Completed
       </label>
+      <div *ngIf="validationErrors['is_completed']" class="invalid-feedback">
+        {{ validationErrors["is_completed"][0] }}
+      </div>
     </div>
   </div>
 
-  <div class="col-1">
-    <button type="submit" class="btn btn-primary">Create</button>
+  <div class="col-2">
+    <button type="submit" class="btn btn-success">Create</button>
+    <button
+      type="button"
+      (click)="clearForm()"
+      class="btn btn-danger"
+      style="margin-left: 5px"
+    >
+      Clear
+    </button>
   </div>
 </form>

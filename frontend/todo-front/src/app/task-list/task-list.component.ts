@@ -15,11 +15,11 @@ export class TaskListComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.route.queryParams
+    this.route.fragment
       .pipe(
-        switchMap((queryParams) => {
+        switchMap((fragment) => {
           let params = new HttpParams();
-          switch (queryParams['filter']) {
+          switch (fragment) {
             case 'overdue':
               params = params.set('overdue', true).set('is_completed', false);
               break;
@@ -40,5 +40,26 @@ export class TaskListComponent implements OnInit {
       .subscribe((tasks) => {
         this.tasks = tasks;
       });
+  }
+
+  toggleTaskCompleted(task: Task) {
+    this.http
+      .patch<Task>(`http://localhost:8000/todo/tasks/${task.id}/`, {
+        is_completed: !task.is_completed,
+      })
+      .subscribe(
+        (updatedTask) => {
+          console.log(task);
+          const taskIndex = this.tasks.findIndex(
+            (t) => t.id === updatedTask.id
+          );
+          if (taskIndex !== -1) {
+            this.tasks[taskIndex] = updatedTask;
+          }
+        },
+        (error) => {
+          alert('Failed to update the task. :(');
+        }
+      );
   }
 }

@@ -133,7 +133,8 @@ REST_FRAMEWORK = {
         "django_filters.rest_framework.DjangoFilterBackend",
         "rest_framework.filters.OrderingFilter",
         "rest_framework.filters.SearchFilter",
-    ]
+    ],
+    "DATE_INPUT_FORMATS": ["%d-%m-%Y"],
 }
 
 CORS_ALLOWED_ORIGINS = ["http://localhost:4200", "http://127.0.0.1:4200"]
