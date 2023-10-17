@@ -19,7 +19,7 @@
 > apt install nodejs
 ```
 
-- Install Angualar globally.
+- Install Angular globally.
 
 ```
 > npm install -g @angular/cli@15
