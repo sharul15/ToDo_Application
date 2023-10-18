@@ -134,7 +134,7 @@ REST_FRAMEWORK = {
         "rest_framework.filters.OrderingFilter",
         "rest_framework.filters.SearchFilter",
     ],
-    "DATE_INPUT_FORMATS": ["%d-%m-%Y"],
+    "DATE_INPUT_FORMATS": ["%d-%m-%Y","%Y-%m-%d"],
 }
 
 CORS_ALLOWED_ORIGINS = ["http://localhost:4200", "http://127.0.0.1:4200"]

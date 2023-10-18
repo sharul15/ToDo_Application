@@ -12,6 +12,12 @@
 
 ### Installation:
 
+- Install venv
+
+```
+> apt install python3.10-venv
+```
+
 - Install Node.js.
 
 ```
@@ -39,14 +45,36 @@ Clone the repository to your local machine:
 > git clone https://github.com/sharul15/verificent_assignment.git
 ```
 
-Let's consider this directory as a `PROJ_DIR`.
+CD into the Project Directory. (Consider this as `PROJ_DIR` henceforth).
+
+```
+> cd verificent_assignment
+```
 
 ### Initilize the backend
 
-- Navigate to the backend directory and install the Python requirements:
+- Navigate to the `backend` directory:
 
 ```
-> cd PROJ_DIR/backend/todo_back/
+> cd backend
+```
+
+- Create and start the Virtual Environment:
+
+```
+> python -m venv venv
+> source venv/bin/activate
+```
+
+- Navigate to the `todo_back` directory:
+
+```
+> cd todo_back
+```
+
+- Install the Python requirements:
+
+```
 > pip install -r requirements.txt
 ```
 
