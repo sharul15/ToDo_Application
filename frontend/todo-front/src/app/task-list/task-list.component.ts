@@ -49,7 +49,6 @@ export class TaskListComponent implements OnInit {
       })
       .subscribe(
         (updatedTask) => {
-          console.log(task);
           const taskIndex = this.tasks.findIndex(
             (t) => t.id === updatedTask.id
           );
