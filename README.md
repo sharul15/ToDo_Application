@@ -1,6 +1,6 @@
 # TODO App
 
-## An assingment for Verificient Technologies
+
 
 > **Description:** This is a simple TODO app built with Python and Angular.
 
